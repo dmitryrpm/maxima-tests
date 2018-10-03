@@ -14,6 +14,6 @@ const (
 
 func main() {
 	// Какой будет результат выполнения приложения
-	fmt.Println(A, B, C) // 0 1 2
-	fmt.Println(D, E, F) // 0 0 0
+	fmt.Println(A, B, C) 
+	fmt.Println(D, E, F)
 }
