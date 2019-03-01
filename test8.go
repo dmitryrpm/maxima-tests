@@ -1,20 +1,15 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-)
+import "fmt"
+
+var num int
 
 func main() {
 	// Какой будет результат выполнения приложения
-	wg := sync.WaitGroup{}
-	data := []string{"one", "two", "three"}
-	for _, v := range data {
-		wg.Add(1)
+	for i := 0; i < 1000; i++ {
 		go func() {
-			fmt.Println(v)
-			wg.Done()
+			num = i
 		}()
 	}
-	wg.Wait()
+	fmt.Printf("NUM is %d", num)
 }

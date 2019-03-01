@@ -4,7 +4,7 @@
 ```bash
 go get -d -u github.com/dmitryrpm/maxima-tests
 cd ${GOPATH}/src/github.com/dmitryrpm/maxima-tests
-go run test1-2.go
+go run test1.go
 # etc
 ```
 

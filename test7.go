@@ -1,15 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 func main() {
 	// Какой будет результат выполнения приложения
-	ch := make(chan string)
-	go func() {
-		for m := range ch {
-			fmt.Printf("processed: %s\n", m)
-		}
-	}()
-	ch <- "cmd.1"
-	ch <- "cmd.2"
+	wg := sync.WaitGroup{}
+	data := []string{"one", "two", "three"}
+	for _, v := range data {
+		wg.Add(1)
+		go func() {
+			fmt.Println(v)
+			wg.Done()
+		}()
+	}
+	wg.Wait()
 }

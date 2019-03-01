@@ -1,22 +1,11 @@
 package main
- 
-import "fmt"
- 
-type MyError struct{}
- 
-func (MyError) Error() string { return "MyError!" }
- 
-func errorHandler(err error) {
-    if err != nil {
-        fmt.Println("Error:", err)
-    }
-}
- 
-func main() {
-    // Каков будет вывод программы и почему?
-    var err *MyError
-    errorHandler(err)
 
-    err = &MyError{}
-    errorHandler(err)
+import "fmt"
+
+func main() {
+	// Какой будет результат выполнения приложения
+	a := []string{"a", "b", "c"}
+	b := a[1:2]
+	b[0] = "q"
+	fmt.Println(a)
 }
