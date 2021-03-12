@@ -13,10 +13,10 @@ type MyData struct {
 func main() {
 	// Какой будет результат выполнения приложения
 	in := MyData{1, "two"}
-	fmt.Printf("%#v\n", in) // main.MyData{One:1, two:"two"}
+	fmt.Printf("%#v\n", in)
 	encoded, _ := json.Marshal(in)
 
-	fmt.Println(string(encoded)) // {"one":1}
+	fmt.Println(string(encoded))
 
 	var out MyData
 	err := json.Unmarshal(encoded, &out)
@@ -24,5 +24,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("%#v\n", out) // main.MyData{One:1, two:""}
+	fmt.Printf("%#v\n", out)
 }
